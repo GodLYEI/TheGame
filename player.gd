@@ -37,6 +37,9 @@ func _ready():
 	if dialogue_ui and dialogue_label:
 		dialogue_ui.visible = true
 		dialogue_label.text = dialogue_lines[current_line_index]
+	
+	# Ẩn chuột hoàn toàn khi mới vào game
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(_delta):
 	# Nếu đang dùng máy tính HOẶC đang hội thoại -> KHÔNG di chuyển
@@ -95,6 +98,7 @@ func open_computer():
 	if computer_ui:
 		computer_ui.visible = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	anim.play("idle_back") 
 
 # --- KẾT NỐI SIGNAL TỪ AREA2D ---
