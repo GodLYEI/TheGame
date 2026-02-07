@@ -8,6 +8,20 @@ var ethic_values_pressing_no = [10, 15, 10, 10, 15, 10]
 
 var cur_question = 0;
 
+func _ready():
+	randomize()
+	shuffle_children(Questions)
+	Questions.get_child(0).visible = true
+	
+
+func shuffle_children(parent: Node):
+	var children = parent.get_children()
+
+	for i in range(children.size() - 1, 0, -1):
+		var j = randi() % (i + 1)
+
+		parent.move_child(children[i], j)
+
 func update_visibility(id, value):
 	Questions.get_child(id).visible = value
 
@@ -34,3 +48,7 @@ func _on_yes_button_pressed() -> void:
 	if (not is_vaild_question(cur_question)): return
 	Player.modify_ethic(ethic_values_pressing_yes[cur_question])
 	on_button_pressed()
+
+
+func _on_computer_ui_vxcode_pressed() -> void:
+	visible = true	

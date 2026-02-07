@@ -8,21 +8,34 @@
 scale = Vector2(5, 5)
 transform = Transform2D(5, 0, 0, 5, 0, 0)
 script = ExtResource("1_u5xp8")
-Questions = NodePath("Questions")
+Questions = NodePath("Control/Questions")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 36.399998
+offset_top = 24.199999
+offset_right = 76.399994
+offset_bottom = 64.2
+scale = Vector2(0.692366, 0.692366)
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
 offset_right = 192.0
 offset_bottom = 160.0
+scale = Vector2(0.9938109, 0.8491337)
 texture = ExtResource("1_6xns3")
 metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
 
-[node name="Questions" type="Control" parent="."]
-layout_mode = 3
+[node name="Questions" type="Control" parent="Control"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
-[node name="Surveillance" type="Label" parent="Questions"]
+[node name="Surveillance" type="Label" parent="Control/Questions"]
+visible = false
 layout_mode = 0
 offset_left = 55.0
 offset_top = 15.0
@@ -30,7 +43,7 @@ offset_right = 148.0
 offset_bottom = 38.0
 text = "surveillance"
 
-[node name="HackCrime" type="Label" parent="Questions"]
+[node name="HackCrime" type="Label" parent="Control/Questions"]
 visible = false
 layout_mode = 0
 offset_left = 55.0
@@ -40,7 +53,7 @@ offset_bottom = 38.0
 text = "Hack
 "
 
-[node name="Bias" type="Label" parent="Questions"]
+[node name="Bias" type="Label" parent="Control/Questions"]
 visible = false
 layout_mode = 0
 offset_left = 55.0
@@ -49,7 +62,7 @@ offset_right = 148.0
 offset_bottom = 38.0
 text = "bias"
 
-[node name="Deepfake" type="Label" parent="Questions"]
+[node name="Deepfake" type="Label" parent="Control/Questions"]
 visible = false
 layout_mode = 0
 offset_left = 55.0
@@ -58,7 +71,7 @@ offset_right = 148.0
 offset_bottom = 38.0
 text = "Deepfake "
 
-[node name="PersonalInfo" type="Label" parent="Questions"]
+[node name="PersonalInfo" type="Label" parent="Control/Questions"]
 visible = false
 layout_mode = 0
 offset_left = 54.0
@@ -67,7 +80,7 @@ offset_right = 153.0
 offset_bottom = 38.0
 text = "PersonalInfo"
 
-[node name="MadeupNews" type="Label" parent="Questions"]
+[node name="MadeupNews" type="Label" parent="Control/Questions"]
 visible = false
 layout_mode = 0
 offset_left = 54.0
@@ -77,21 +90,35 @@ offset_bottom = 38.0
 text = "Made up news
 "
 
-[node name="YesButton" type="TextureButton" parent="."]
+[node name="YesButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -8.2016e-05
+anchor_top = -0.5412884
+anchor_right = -8.2016e-05
+anchor_bottom = -0.5412884
 offset_left = 39.0
 offset_top = 106.0
 offset_right = 59.0
 offset_bottom = 126.0
 scale = Vector2(2, 2)
 texture_normal = ExtResource("2_pxfe1")
+metadata/_edit_use_anchors_ = true
 
-[node name="NoButton" type="TextureButton" parent="."]
+[node name="NoButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.31419662
+anchor_top = -0.50184536
+anchor_right = 0.3141968
+anchor_bottom = -0.50184536
 offset_left = 105.0
 offset_top = 105.0
 offset_right = 125.0
 offset_bottom = 125.0
 scale = Vector2(2, 2)
 texture_normal = ExtResource("2_pxfe1")
+metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="YesButton" to="." method="_on_yes_button_pressed"]
-[connection signal="pressed" from="NoButton" to="." method="_on_no_button_pressed"]
+[connection signal="pressed" from="Control/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="Control/NoButton" to="." method="_on_no_button_pressed"]
