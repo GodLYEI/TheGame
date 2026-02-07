@@ -1,6 +1,7 @@
 extends RichTextLabel
 
 @export var text_speed := 0.09   # seconds per character
+@onready var clicking_sound = $"../clicking"
 var full_text := ""
 var index := 0
 
@@ -13,6 +14,7 @@ func start_text(value):
 
 func type_text():
     while index <= full_text.length():
+        clicking_sound.play()
         visible_characters = index
         index += 1
         await get_tree().create_timer(text_speed).timeout
