@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://du5hw6brraj5o"]
+[gd_scene load_steps=11 format=3 uid="uid://du5hw6brraj5o"]
 
 [ext_resource type="Texture2D" uid="uid://djf0uxqpn43e" path="res://Room/window background.png" id="1_6xns3"]
 [ext_resource type="Script" uid="uid://cxid1lsycarhq" path="res://UI/levels.gd" id="1_u5xp8"]
+[ext_resource type="AudioStream" uid="uid://3cwxxnsy82a8" path="res://Room/More Click, select, wrong, money next button sound - Spunkys Land (mp3cut.net) (1).mp3" id="2_m4xml"]
 [ext_resource type="Texture2D" uid="uid://b3oxxb8dgi666" path="res://Character/reward.png" id="3_3vher"]
+[ext_resource type="AudioStream" uid="uid://bbye3oi3mxnpb" path="res://Room/More Click, select, wrong, money next button sound - Spunkys Land (mp3cut.net).mp3" id="3_ssrh4"]
 [ext_resource type="Texture2D" uid="uid://cxxutawwq1sod" path="res://Character/blue-background-abstract-background-free-photo.png" id="3_x6x1r"]
 [ext_resource type="Texture2D" uid="uid://co1d038jaaxjv" path="res://Character/punish.png" id="4_i00nb"]
 [ext_resource type="Texture2D" uid="uid://c82nk733w25vg" path="res://Character/robot-preview.png" id="6_wticg"]
 [ext_resource type="Texture2D" uid="uid://cpdrs3xlfwexv" path="res://Character/bg.png" id="6_x6x1r"]
+[ext_resource type="AudioStream" uid="uid://b1j60rutkx0l7" path="res://Room/UI Confirm Sound Effect - Free Game Audio Assets - Resoundxstudio (mp3cut.net).mp3" id="8_oaq07"]
 
 [node name="Levels" type="CanvasLayer" node_paths=PackedStringArray("Questions", "Introduce", "IntroLabel")]
 scale = Vector2(5, 5)
@@ -15,6 +18,12 @@ script = ExtResource("1_u5xp8")
 Questions = NodePath("Control/Questions")
 Introduce = NodePath("Introduce")
 IntroLabel = NodePath("Introduce/Label")
+
+[node name="WrongSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_m4xml")
+
+[node name="CorrectSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ssrh4")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -347,6 +356,19 @@ offset_bottom = 382.0
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("6_wticg")
 stretch_mode = 2
+
+[node name="PressE" type="Label" parent="Introduce"]
+offset_left = 104.4
+offset_top = 98.8
+offset_right = 243.4
+offset_bottom = 121.8
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "press E to continue"
+
+[node name="UiConfirmSoundEffect-FreeGameAudioAssets-Resoundxstudio(mp3Cut_net)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_oaq07")
 
 [connection signal="pressed" from="Control/YesButton" to="." method="_on_yes_button_pressed"]
 [connection signal="pressed" from="Control/NoButton" to="." method="_on_no_button_pressed"]

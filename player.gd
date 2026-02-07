@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var speed: float = 200.0
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+@onready var choice_sound = $"UiConfirmSoundEffect-FreeGameAudioAssets-Resoundxstudio(mp3Cut_net)"
 
 # Kéo node Computer UI vào đây
 @export var computer_ui: CanvasLayer 
@@ -72,12 +73,14 @@ func update_animation(direction):
 func _input(event):
 	# --- XỬ LÝ HỘI THOẠI ---
 	if is_in_dialogue and event.is_action_pressed("ui_accept"):
+		choice_sound.play()
 		next_dialogue()
 		return # Không xử lý các input khác khi đang nói chuyện
 
 	# --- XỬ LÝ TƯƠNG TÁC MÁY TÍNH ---
 	if event.is_action_pressed("ui_accept") and player_in_range and not is_using_computer:
 		# Kiểm tra hướng nhìn lên (back)
+		choice_sound.play()
 		if anim.animation.ends_with("back"):
 			open_computer()
 

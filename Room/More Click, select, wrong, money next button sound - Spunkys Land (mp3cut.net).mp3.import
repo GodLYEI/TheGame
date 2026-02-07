@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bbye3oi3mxnpb"
+path="res://.godot/imported/More Click, select, wrong, money next button sound - Spunkys Land (mp3cut.net).mp3-973db94ecf922343dee97d01672484ee.mp3str"
+
+[deps]
+
+source_file="res://Room/More Click, select, wrong, money next button sound - Spunkys Land (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/More Click, select, wrong, money next button sound - Spunkys Land (mp3cut.net).mp3-973db94ecf922343dee97d01672484ee.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://c2s7c5lgqgc08"]
+[gd_scene load_steps=28 format=3 uid="uid://c2s7c5lgqgc08"]
 
 [ext_resource type="Script" uid="uid://boxvj63pjwkh5" path="res://player.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://d1hqdhlfebnm0" path="res://Character/16x16 Idle-Sheet.png" id="2_hqtel"]
 [ext_resource type="Texture2D" uid="uid://iydbf4mhin3w" path="res://Character/16x16 Walk-Sheet.png" id="3_sweqy"]
+[ext_resource type="AudioStream" uid="uid://b1j60rutkx0l7" path="res://Room/UI Confirm Sound Effect - Free Game Audio Assets - Resoundxstudio (mp3cut.net).mp3" id="4_58ae2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
 atlas = ExtResource("2_hqtel")
@@ -199,3 +200,7 @@ frame_progress = 0.237719
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_634y6")
+
+[node name="UiConfirmSoundEffect-FreeGameAudioAssets-Resoundxstudio(mp3Cut_net)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_58ae2")
+volume_db = -0.11

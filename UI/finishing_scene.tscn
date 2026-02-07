@@ -1,23 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqpomrduhvgtw"]
+[gd_scene load_steps=6 format=3 uid="uid://bqpomrduhvgtw"]
 
 [ext_resource type="Script" uid="uid://54j36bqw7fqn" path="res://UI/finishing_scene.gd" id="1_em8qp"]
-[ext_resource type="Script" uid="uid://c2yrm0uxvlupx" path="res://UI/ethic_scale.gd" id="2_ax7ci"]
-[ext_resource type="Script" uid="uid://bm3b6wbd4l4s3" path="res://UI/endings.gd" id="3_ax7ci"]
-[ext_resource type="Script" uid="uid://bx5lehtvvqlpe" path="res://UI/ethics_message.gd" id="4_opqp6"]
+[ext_resource type="Texture2D" uid="uid://bnpp4gwa1pqwa" path="res://Room/blue-background-abstract-background-free-photo.png" id="2_4g263"]
+[ext_resource type="Script" path="res://UI/ethic_scale.gd" id="2_ax7ci"]
+[ext_resource type="Script" path="res://UI/endings.gd" id="3_ax7ci"]
+[ext_resource type="Script" path="res://UI/ethics_message.gd" id="4_opqp6"]
 
 [node name="finishing_scene" type="CanvasLayer"]
 script = ExtResource("1_em8qp")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
 offset_right = 965.0
 offset_bottom = 806.0
-color = Color(0.13803378, 0.13803375, 0.13803375, 1)
+texture = ExtResource("2_4g263")
 
 [node name="Ethics" type="RichTextLabel" parent="."]
 offset_left = 23.0
 offset_top = -2.0
 offset_right = 965.0
 offset_bottom = 660.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
 theme_override_font_sizes/normal_font_size = 100
 horizontal_alignment = 1
 script = ExtResource("2_ax7ci")
@@ -27,6 +30,8 @@ offset_left = 42.0
 offset_top = 393.0
 offset_right = 915.0
 offset_bottom = 819.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
 theme_override_font_sizes/normal_font_size = 50
 horizontal_alignment = 1
 script = ExtResource("3_ax7ci")
@@ -35,7 +40,9 @@ script = ExtResource("3_ax7ci")
 offset_left = 42.0
 offset_top = 190.0
 offset_right = 915.0
-offset_bottom = 615.99963
+offset_bottom = 616.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
 theme_override_font_sizes/normal_font_size = 50
 horizontal_alignment = 1
 script = ExtResource("4_opqp6")

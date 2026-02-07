@@ -1,9 +1,13 @@
 extends CanvasLayer
 
+
 @export var Questions : Control
 @export var Player : CharacterBody2D
 @export var Introduce : Control
 @export var IntroLabel : Label # <-- Kéo node Label trong Introduce vào đây
+@onready var choice_sound = $"UiConfirmSoundEffect-FreeGameAudioAssets-Resoundxstudio(mp3Cut_net)"
+@onready var correct = $CorrectSound
+@onready var wrong = $WrongSound
 
 var ethic_values_pressing_yes = [-10, -15, -10, -15, -10, -10, 15, 10, 15, 10, 10, 15, 15, 10, 10, 10]
 var ethic_values_pressing_no = [10, 15, 10, 10, 15, 10, -15, -10, -15, -10, -10, -15, -15, -10, -10, -10]
@@ -113,12 +117,20 @@ func on_button_pressed():
 
 func _on_no_button_pressed() -> void:
 	if (not is_vaild_question(cur_question)): return
+	if (ethic_values_pressing_no[cur_question] < 0):
+		wrong.play()
+	else:
+		correct.play()
 	Player.modify_ethic(ethic_values_pressing_no[cur_question])
 	on_button_pressed()
 
 
 func _on_yes_button_pressed() -> void:
 	if (not is_vaild_question(cur_question)): return
+	if (ethic_values_pressing_yes[cur_question] < 0):
+		wrong.play()
+	else:
+		correct.play()
 	Player.modify_ethic(ethic_values_pressing_yes[cur_question])
 	on_button_pressed()
 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b1j60rutkx0l7"
+path="res://.godot/imported/UI Confirm Sound Effect - Free Game Audio Assets - Resoundxstudio (mp3cut.net).mp3-a48ade200df22b205ef0c8c7a2987069.mp3str"
+
+[deps]
+
+source_file="res://Room/UI Confirm Sound Effect - Free Game Audio Assets - Resoundxstudio (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/UI Confirm Sound Effect - Free Game Audio Assets - Resoundxstudio (mp3cut.net).mp3-a48ade200df22b205ef0c8c7a2987069.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

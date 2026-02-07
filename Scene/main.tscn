@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://blealwbwk1lol"]
+[gd_scene load_steps=10 format=3 uid="uid://blealwbwk1lol"]
 
 [ext_resource type="Script" uid="uid://dgh7m4ljymqut" path="res://Scene/main.gd" id="1_r34rm"]
 [ext_resource type="PackedScene" uid="uid://v78o0k7ytuia" path="res://Scene/map.tscn" id="1_sblpm"]
@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cq5ewb5jejrrs" path="res://UI/computer_ui.tscn" id="3_r34rm"]
 [ext_resource type="PackedScene" uid="uid://du5hw6brraj5o" path="res://UI/Levels.tscn" id="5_3amdw"]
 [ext_resource type="FontFile" uid="uid://uq0uitr0nlxj" path="res://Character/VCR_OSD_MONO_1.001.ttf" id="6_1xcnr"]
-[ext_resource type="PackedScene" path="res://UI/finishing_scene.tscn" id="7_ow1sv"]
+[ext_resource type="PackedScene" uid="uid://bqpomrduhvgtw" path="res://UI/finishing_scene.tscn" id="7_ow1sv"]
+[ext_resource type="AudioStream" uid="uid://dke7a20gm1ccn" path="res://Room/A Lonely Cherry Tree 🌸 - Pix.mp3" id="8_75buv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xcnr"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -65,6 +66,12 @@ vertical_alignment = 1
 
 [node name="finishing_scene" parent="." instance=ExtResource("7_ow1sv")]
 visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_75buv")
+volume_db = -16.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="Map/ComputerZone" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Map/ComputerZone" to="Player" method="_on_area_2d_body_exited"]
