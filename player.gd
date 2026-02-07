@@ -18,7 +18,7 @@ func _physics_process(_delta):
 		return
 
 	# -------- INPUT --------
-	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	# -------- DI CHUYỂN --------
 	velocity = input_direction * speed 

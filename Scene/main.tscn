@@ -25,6 +25,7 @@ visible = false
 visible = false
 
 [node name="Levels" parent="." node_paths=PackedStringArray("Player") instance=ExtResource("5_3amdw")]
+visible = false
 Player = NodePath("../Player")
 
 [connection signal="body_entered" from="Map/ComputerZone" to="Player" method="_on_area_2d_body_entered"]
