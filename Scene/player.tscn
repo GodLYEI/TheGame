@@ -203,4 +203,4 @@ shape = SubResource("RectangleShape2D_634y6")
 
 [node name="UiConfirmSoundEffect-FreeGameAudioAssets-Resoundxstudio(mp3Cut_net)" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_58ae2")
-volume_db = -0.11
+volume_db = 16.0

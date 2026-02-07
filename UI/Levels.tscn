@@ -358,6 +358,7 @@ texture = ExtResource("6_wticg")
 stretch_mode = 2
 
 [node name="PressE" type="Label" parent="Introduce"]
+layout_mode = 0
 offset_left = 104.4
 offset_top = 98.8
 offset_right = 243.4
