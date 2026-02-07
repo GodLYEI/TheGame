@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://blealwbwk1lol"]
+[gd_scene load_steps=9 format=3 uid="uid://blealwbwk1lol"]
 
 [ext_resource type="Script" uid="uid://dgh7m4ljymqut" path="res://Scene/main.gd" id="1_r34rm"]
 [ext_resource type="PackedScene" uid="uid://v78o0k7ytuia" path="res://Scene/map.tscn" id="1_sblpm"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cq5ewb5jejrrs" path="res://UI/computer_ui.tscn" id="3_r34rm"]
 [ext_resource type="PackedScene" uid="uid://du5hw6brraj5o" path="res://UI/Levels.tscn" id="5_3amdw"]
 [ext_resource type="FontFile" uid="uid://uq0uitr0nlxj" path="res://Character/VCR_OSD_MONO_1.001.ttf" id="6_1xcnr"]
+[ext_resource type="PackedScene" uid="uid://bqpomrduhvgtw" path="res://UI/finishing_scene.tscn" id="7_ow1sv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xcnr"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -62,8 +63,12 @@ text = "Có nha 👍 Unicode mũi tên xuống có mấy loại, "
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="finishing_scene" parent="." instance=ExtResource("7_ow1sv")]
+visible = false
+
 [connection signal="body_entered" from="Map/ComputerZone" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Map/ComputerZone" to="Player" method="_on_area_2d_body_exited"]
 [connection signal="vxcode_pressed" from="ComputerUI" to="Levels" method="_on_computer_ui_vxcode_pressed"]
+[connection signal="isFinished" from="Levels" to="." method="_on_levels_is_finished"]
 
 [editable path="Map"]

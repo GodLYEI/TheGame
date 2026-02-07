@@ -6,6 +6,11 @@ extends CanvasLayer
 var ethic_values_pressing_yes = [-10, -15, -10, -15, -10, -10, 15, 10, 15, 10, 10, 15, 15, 10, 10, 10]
 var ethic_values_pressing_no = [10, 15, 10, 10, 15, 10, -15, -10, -15, -10, -10, -15, -15, -10, -10, -10]
 
+signal isFinished(ethics_scale)
+
+# lowest ethic = -140
+# highest ethic = 240
+
 var cur_question = 0;
 
 func _ready():
@@ -13,11 +18,22 @@ func _ready():
 	shuffle_children(Questions, ethic_values_pressing_yes, ethic_values_pressing_no)
 	Questions.get_child(0).visible = true
 
+	# var low = 50
+	# var high = 50
 	# for i in ethic_values_pressing_yes:
+	# 	if i < 0: 
+	# 		low += i
+	# 	else: 
+	# 		high += i
 	# 	print(i)
 		
 	# for i in ethic_values_pressing_no:
-	# 	print(i)
+	# 	if i > 0: 
+	# 		high += i
+	# 	else:
+	# 		low += i
+	
+	# print(low, " ", high)
 
 func swap(arr, i, j):
 	var temp = arr[i]
@@ -41,12 +57,14 @@ func is_vaild_question(id):
 	return id < Questions.get_child_count()
 
 func on_button_pressed():
-
 	update_visibility(cur_question, false);
 
 	cur_question += 1
-	if (not is_vaild_question(cur_question)): return
+	if (not is_vaild_question(cur_question)):
+		isFinished.emit(Player.get_ethics())
+		return
 
+	print(cur_question, is_vaild_question(cur_question))
 	update_visibility(cur_question, true);
 
 
